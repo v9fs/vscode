@@ -17,9 +17,8 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "logging": {
-        "trace": true
-      },
+      "miDebuggerArgs": "-n",
+      "targetArchitecture": "arm64",
       "setupCommands": [
         {
           "text": "set arch aarch64",
