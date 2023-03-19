@@ -6,7 +6,7 @@
     { "label": "run",
       "dependsOn": [
         "trace"
-      ]
+      ],
     },
     {
       "label": "trace",
@@ -37,12 +37,12 @@
             "endsPattern": ".",
           }
         }
-      ]  
+      ]
     },
     {
       "label": "vm",
       "type": "shell",
-      "command": "virsh -c qemu+tcp://gateway.docker.internal/session start DebugKernel --console --autodestroy --paused",
+      "command": "virsh -c qemu+tcp://gateway.docker.internal/session define /workspaces/linux/.vscode/DebugKernel-NativeQemu-aarch64.xml && virsh -c qemu+tcp://gateway.docker.internal/session start DebugKernel --console --autodestroy --paused",
       "presentation": {
         "echo": false,
         "clear": true,
@@ -70,7 +70,7 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "make O=/build -j8 && echo installing new kernel && cp /build/arch/arm64/boot/Image /boot",
+      "command": "mkdir -p .build;make O=.build -j8 && echo installing new kernel && cp .build/arch/arm64/boot/Image /tmp",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -80,7 +80,7 @@
         "group": "build"
       },
       "options": {
-        "cwd": "/home/vscode/linux"
+        "cwd": "/workspaces/linux"
       }
     }
   ]

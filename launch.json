@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "preLaunchTask": "run",
-      "program": "/build/vmlinux",
+      "program": "/workspaces/linux/.build/vmlinux",
       "miDebuggerServerAddress": "gateway.docker.internal:1234",
       "args": [],
       "stopAtEntry": true,
@@ -17,9 +17,9 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerArgs": "-n",
-      "targetArchitecture": "arm64",
-      "logging": "trace=true",
+      "logging": {
+        "trace": true
+      },
       "setupCommands": [
         {
           "text": "set arch aarch64",
