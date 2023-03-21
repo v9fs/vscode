@@ -86,7 +86,7 @@
     {
       "label": "qemu",
       "type": "shell",
-      "command": "/home/v9fs-test/qemu.bash",
+      "command": "/home/v9fs-test/test/qemu.bash",
       "group": "test",
       "presentation": {
         "echo": false,
