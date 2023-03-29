@@ -86,8 +86,7 @@
     {
       "label": "qemu",
       "type": "shell",
-      "command": "/home/v9fs-test/test/qemu.bash",
-      "group": "test",
+      "command": "/home/v9fs-test/test/qemu.bash && tail -f /home/v9fs-test/qemu.log && kill `cat /home/v9fs-test/qemu.pid`",
       "presentation": {
         "echo": false,
         "clear": true,
@@ -113,9 +112,6 @@
       ]
     },
     { "label": "test",
-      "dependsOn": [
-        "qemu",
-      ],
       "type": "shell",
       "command": "/home/v9fs-test/test/test.bash",
       "group": "test",
@@ -136,12 +132,11 @@
             }
           ],
           "background": {
-            "activeOnStart": true,
-            "beginsPattern": ".",
+            "beginsPattern": "^QEMU Started",
             "endsPattern": ".",
           }
         }
-      ]
+      ],
       "options": {
         "cwd": "/home/v9fs-test/test"
       }
