@@ -70,7 +70,7 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "mkdir -p .build;make O=.build -j8 && echo installing new kernel && cp .build/arch/arm64/boot/Image /tmp",
+      "command": "mkdir -p .build;make O=.build olddefconfig;make O=.build -j8 && echo installing new kernel && cp .build/arch/arm64/boot/Image /tmp",
       "group": {
         "kind": "build",
         "isDefault": true
